@@ -1,9 +1,5 @@
 /*
 
-TemplateMo 565 Onix Digital
-
-https://templatemo.com/tm-565-onix-digital
-
 
 ------------------------------------------------
 Table of contents
@@ -1089,23 +1085,23 @@ About
 }
 
 .about-us .fact-item .icon {
-  width: 45px;
-  height: 45px;
+  width: 60px;
+  height: 60px;
 }
 
 .about-us .fact-item {
-  margin-top: 45px;
+  margin-top: 50px;
 }
 
 .about-us .fact-item .count-digit {
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 700;
   color: #2a2a2a;
   margin-top: 5px;
 }
 
 .about-us .fact-item .count-title {
-  font-size: 15px;
+  font-size: 16px;
   color: #901b13;
 }
 
@@ -1162,13 +1158,13 @@ Portfolio
   bottom: 30px;
 }
 
-.our-portfolio .item .thumb:hover img {
+/* .our-portfolio .item .thumb:hover img {
   opacity: 0.7;
-}
+} */
 
 .our-portfolio .item .hover-effect {
   position: absolute;
-  background-image: url(../images/hover-bg.png);
+  background-image: url(../images/hover-bg.);
   background-repeat: no-repeat;
   background-size: cover;
   transition: all .5s;
@@ -2026,18 +2022,18 @@ responsive
 /* Why To Choose Section */
 .button {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #0077be; /* Set your desired background color */
+  padding: 10px 10px;
+  background-color: #901b13 ; /* Set your desired background color */
   color: #fff; /* Set your desired text color */
   text-decoration: none;
   border: none;
-  border-radius: 20px;
+  border-radius: 3px;
   transition: background-color 0.6s;
   /* font-weight: bold; */
 }
 
 .button:hover {
-  background-color: #901b13; /* Change the background color on hover */
+  background-color: #0077be; /* Change the background color on hover */
   color: #fff;
 }
 .button1 {
