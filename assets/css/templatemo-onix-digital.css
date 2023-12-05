@@ -2086,3 +2086,54 @@ responsive
           padding: 12px 24px;
       }
   }
+
+  .book-mitra-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #901b13; /* You can adjust the background color as needed */
+    border: 1px solid #007bff; /* You can adjust the border color as needed */
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
+  }
+  
+  .book-mitra-button:hover {
+    background-color:#0077be; /* You can adjust the hover background color as needed */
+    color: #ffffff; /* Set text color to white on hover */
+  }
+  
+  /* Add this CSS to your stylesheet or in the head of your HTML document */
+
+#downloadSection {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.download-title {
+  color: #333; /* Adjust the color for the title */
+  margin-bottom: 10px;
+}
+
+.download-description {
+  color: #666; /* Adjust the color for the description */
+  margin-bottom: 10px;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #0077bf; /* You can adjust the background color as needed */
+  border: 1px solid #007bff; /* You can adjust the border color as needed */
+  border-radius: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
+}
+
+.download-button:hover {
+  background-color: #901b13; /* You can adjust the hover background color as needed */
+  color: #ffffff; /* Set text color to white on hover */
+}
+
+  
