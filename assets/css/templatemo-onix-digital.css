@@ -2136,4 +2136,57 @@ responsive
   color: #ffffff; /* Set text color to white on hover */
 }
 
-  
+/* Reset some default styles */
+    body, h1, h2, p, img {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Apply a box-sizing border-box to all elements */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    /* CSS for the wordfind-link */
+    .wordfind-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* CSS for the wordfind container */
+    .wordfind {
+      width: 100%;
+      max-width: 800px;
+      margin: auto;
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      text-align: center; /* Center the text within the container */
+    }
+
+    /* Style for the image */
+    .wordfind img {
+      width: 100%; /* Make the image responsive */
+      max-width: 100%; /* Ensure the image does not exceed its natural size */
+      margin-bottom: 10px; /* Add space between the image and the text */
+    }
+
+    /* Style for the download message text */
+    .download-message {
+      color: #ffffff;
+      background-color:#901b13;
+      border-radius: 6px;
+      padding: 10px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    /* Media query for responsiveness */
+    @media only screen and (max-width: 800px) {
+      .wordfind {
+        width: 90%;
+      }
+    }
