@@ -2183,6 +2183,10 @@ responsive
       box-sizing: border-box;
       width: 100%;
     }
+    .download-message:hover{
+      background-color: #0077be;
+      transition: 0.8s;
+    }
 
     /* Media query for responsiveness */
     @media only screen and (max-width: 800px) {
