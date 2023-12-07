@@ -2249,7 +2249,7 @@ responsive
     margin: 20px 0; /* Adjust the margin as needed */
     border: 3px solid #901b13; /* Border style and color */
     border-radius: 10px; /* Optional: Add border radius for rounded corners */
-    overflow: hidden; /* Ensure the border doesn't affect the video size */
+    overflow: auto; /* Ensure the border doesn't affect the video size */
   }
 
   /* Optional: Add styling for the video player */
