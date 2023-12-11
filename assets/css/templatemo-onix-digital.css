@@ -1385,6 +1385,12 @@ Pricing
 .pricing-tables .third-item {
   background-image: url(../images/third-plan-bg.png);
 }
+.pricing-tables .fourth-item {
+  background-image: url(../images/third-plan-bg.png);
+}
+.pricing-tables .fifth-item {
+  background-image: url(../images/second-plan-bg.png);
+}
 
 
 /* 
