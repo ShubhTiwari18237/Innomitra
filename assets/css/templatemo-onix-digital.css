@@ -2337,3 +2337,25 @@ responsive
     background-color: #ff9900;
     color: white;
 }
+
+.container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  background-color: #901b13;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
