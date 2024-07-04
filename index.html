@@ -65,6 +65,7 @@ https://templatemo.com/tm-565-onix-digital
       display: block;
       text-decoration: none;
       color: #333333;
+      color: #901b13;
     }
 
     /* Change the background color of options on hover */
@@ -87,6 +88,71 @@ https://templatemo.com/tm-565-onix-digital
       max-width: 100%;
       height: auto;
     }
+    .left-side {
+    width: 100%; /* Adjust width to make the container full width */
+    max-width: 300px; /* Max width for the container */
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #0077be; /* Background color for the sidebar */
+    text-align: center; /* Center the content inside the container */
+    margin: 0 auto; /* Center the container itself */
+    margin-bottom: 10px;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.clickable-container {
+    text-decoration: none;
+    color: #333; /* Default text color */
+    font-size: 16px; /* Default font size */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    display: inline-block; /* Make the container inline-block to center it */
+}
+
+.clickable-container:hover {
+    color: #007BFF; /* Change text color on hover */
+}
+
+.responsive-image {
+    width: 100%; /* Make image responsive */
+    max-width: 250px; /* Increase max width of the image */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.responsive-image:hover {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+.text-below {
+    margin-top: 10px;
+    color: white; /* Default text color */
+    font-size: 26px; /* Default font size */
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+
+    .left-side {
+        width: 100%;
+        text-align: center;
+    }
+
+    .responsive-image {
+        max-width: 200px; /* Adjust max width for smaller screens */
+    }
+
+    .text-below {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
   </style>
 </head>
 
@@ -212,6 +278,14 @@ https://templatemo.com/tm-565-onix-digital
       </div>
     </div>
   </div>
+
+  <div class="left-side">
+    <a href="phyzioclinic.html" class="clickable-container">
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHMyMjNmNzVidDVzY2c1Zjk0d2UzYzlodmZ1Y21oejB4ZHB2MmRybSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0mjBxwqmBpIZnjOqoA/giphy.webp" alt="Description of Image" class="responsive-image">
+        <p class="text-below">Our Phyzio Clinics</p>
+    </a>
+</div>
+
   <center>
     <div class="footer-item">
       <a href="//api.whatsapp.com/send?phone=91 9522122133&text=Hello I Want To Know More About Your Services "
@@ -1390,7 +1464,7 @@ https://templatemo.com/tm-565-onix-digital
           </div>
         </div>
         <div class="col-lg-5 align-self-center">
-          <form id="contact" action="" method="get">
+          <form id="contact" action="https://formspree.io/f/mvgppqzl" method="POST">
             <div class="row">
               <div class="col-lg-12">
                 <fieldset>
