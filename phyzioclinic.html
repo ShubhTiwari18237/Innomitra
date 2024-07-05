@@ -6,54 +6,86 @@
     <title>Clinic Information</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
+        .navbar {
+            background: #0fbbd5;
+            overflow: hidden;
+            text-align: center;
+        }
 
-h1 {
-    background: #0fbbd5;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
+        .navbar a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 6px;
+            transition: background 0.3s, color 0.3s;
+        }
 
-.clinic {
-    background: #fff;
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        .navbar a:hover {
+            background: #d83024;
+            color: white;
+        }
 
-.clinic h2 {
-    color: #0fbbd5;
-}
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
 
-.clinic p {
-    margin: 10px 0;
-    font-size: 1.1em;
-}
+        h1 {
+            color: #0fbbd5;
+            padding: 20px 0;
+            text-align: center;
+        }
 
-.clinic a {
-    color: #333;
-    text-decoration: none;
-}
+        .clinic {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-.clinic a:hover {
-    text-decoration: underline;
-}
+        .clinic h2 {
+            color: #0fbbd5;
+        }
 
+        .clinic p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .clinic a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .clinic a:hover {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <a href="tel:9522122133">Call for Booking</a>
+        <a href="https://wa.me/9522122133" target="_blank">WhatsApp Us</a>
+    </div>
+
     <div class="container">
         <h1>Our Clinics</h1>
 
