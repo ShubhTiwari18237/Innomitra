@@ -2387,7 +2387,7 @@ responsive
       height: auto;
   }
 }
-
+ /* Blog Section Starts */
 .innophyzio-blog-container {
   max-width: 1000px;
   margin: 40px auto;
@@ -2476,3 +2476,5 @@ responsive
 .innophyzio-hashtags a:hover {
   color: #0077be;
 }
+
+/* Blog Section Ends */
