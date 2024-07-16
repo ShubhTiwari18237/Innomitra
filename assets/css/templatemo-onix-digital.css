@@ -2394,8 +2394,8 @@ responsive
   padding: 20px;
   background-color: #ffffff;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+  box-shadow: 0 4px 8px #0077be;
   transition: transform 0.3s ease;
 }
 
