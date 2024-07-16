@@ -2387,3 +2387,92 @@ responsive
       height: auto;
   }
 }
+
+.innophyzio-blog-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.innophyzio-blog-container:hover {
+  transform: translateY(-20px);
+}
+
+.innophyzio-blog-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.innophyzio-blog-header h2:first-of-type {
+  font-weight: bolder;
+  color: #0077be;
+}
+
+.innophyzio-blog-header h2:last-of-type {
+  font-size: 24px;
+  color: #A62826;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.innophyzio-blog-main {
+  font-size: 16px;
+  color: #555;
+}
+
+.innophyzio-blog-section {
+  margin-bottom: 20px;
+}
+
+.innophyzio-blog-section h3 {
+  font-size: 22px;
+  color: #0077be;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.innophyzio-blog-section h3::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background-color: #0077be;
+  bottom: -5px;
+  left: 0;
+  border-radius: 2px;
+}
+
+.innophyzio-blog-section h4 {
+  font-size: 20px;
+  color: #15a892;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.innophyzio-blog-section p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+  font-size: medium;
+}
+
+.innophyzio-hashtags {
+  font-size: 20px;
+  color: #ff0000;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.innophyzio-hashtags a {
+  color: #0077be;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.innophyzio-hashtags a:hover {
+  color: #0077be;
+}
