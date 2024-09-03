@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now - Magazine</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .buy-form {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            transition: transform 0.3s ease;
+        }
+        .buy-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+        }
+        .price-info {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #007bff;
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: #555;
+            font-size: 14px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s ease;
+            box-sizing: border-box;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            background-color: #fff;
+            border-color: #007bff;
+            outline: none;
+        }
+        .form-group textarea {
+            resize: none;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .confirmation {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: #e9f7ef;
+            color: #155724;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .confirmation img {
+            margin-top: 10px;
+            max-width: 250px;
+            width: 100%;
+            height: auto;
+        }
+        .confirmation a {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        @media (max-width: 768px) {
+            .buy-form {
+                padding: 15px;
+            }
+            .buy-form h2 {
+                font-size: 20px;
+            }
+            .price-info {
+                font-size: 16px;
+            }
+            .form-group label {
+                font-size: 13px;
+            }
+            .form-group input, .form-group textarea {
+                padding: 10px;
+            }
+            .form-group button {
+                padding: 10px;
+                font-size: 15px;
+            }
+            .confirmation {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="buy-form" id="buy-form">
+        <h2>Buy Magazine</h2>
+        <p class="price-info">Price: ₹149</p> <!-- Price Display -->
+        <form id="magazineForm" action="https://formspree.io/f/mvgppqzl" method="POST">
+            <div class="form-group">
+                <label for="customer-name">Customer Name</label>
+                <input type="text" id="customer-name" name="customer-name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone No</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city" required>
+            </div>
+            <div class="form-group">
+                <label for="pincode">Pincode</label>
+                <input type="text" id="pincode" name="pincode" placeholder="Enter your pincode" pattern="[0-9]{6}" title="Please enter a valid 6-digit pincode" required>
+            </div>
+            <div class="form-group">
+                <label for="landmark">Nearby Landmark</label>
+                <input type="text" id="landmark" name="landmark" placeholder="Enter a nearby landmark" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" min="1" placeholder="Enter quantity" required>
+            </div>
+            <!-- Hidden field for Manomitra -->
+            <input type="hidden" name="source" value="Manomitra Magazine">
+            <div class="form-group">
+                <button type="submit">Buy Now</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="confirmation" id="confirmation">
+        <p>Enquiry Sent! The price of the magazine is ₹149. Please make payment using the QR code below.</p>
+        <img src="assets/images/QR Innomitra.jpg" alt="QR Code for Payment">
+        <p style="margin-top: 15px;">After payment, please send a screenshot to this number:</p>
+        <a href="//api.whatsapp.com/send?phone=919522122133&text=Hello I Am Sharing A Screenshot For Payment Confirmation">
+            <i class="fab fa-whatsapp"></i> 9522122133
+        </a>
+    </div>
+
+    <script>
+        document.getElementById('magazineForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = event.target;
+
+            // Client-side validation
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('buy-form').style.display = 'none';
+                    document.getElementById('confirmation').style.display = 'block';
+                } else {
+                    alert('There was a problem submitting your form');
+                }
+            }).catch(error => {
+                alert('There was a problem submitting your form');
+            });
+        });
+    </script>
+
+</body>
+</html>
