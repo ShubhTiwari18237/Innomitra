@@ -46,7 +46,7 @@
             color: #555;
             font-size: 14px;
         }
-        .form-group input, .form-group textarea {
+        .form-group input, .form-group textarea, .form-group select {
             width: 100%;
             padding: 12px;
             border: 1px solid #ddd;
@@ -56,9 +56,9 @@
             transition: background-color 0.3s ease;
             box-sizing: border-box;
         }
-        .form-group input:focus, .form-group textarea:focus {
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
             background-color: #fff;
-            border-color: #0077be;
+            border-color: #A62826;
             outline: none;
         }
         .form-group textarea {
@@ -117,7 +117,7 @@
             .form-group label {
                 font-size: 13px;
             }
-            .form-group input, .form-group textarea {
+            .form-group input, .form-group textarea, .form-group select {
                 padding: 10px;
             }
             .form-group button {
@@ -133,8 +133,8 @@
 <body>
 
     <div class="buy-form" id="buy-form">
-        <h2>Buy Online Magazine</h2>
-        <p class="price-info">Price: ₹149</p>
+        <h2>Buy Magazine</h2>
+        <p class="price-info" id="price-info">Price: ₹149 (Physical Copy)</p> <!-- Price Display -->
         <form id="magazineForm" action="https://formspree.io/f/mkgwwzrk" method="POST">
             <div class="form-group">
                 <label for="customer-name">Customer Name</label>
@@ -160,6 +160,21 @@
                 <label for="pincode">Pincode</label>
                 <input type="text" id="pincode" name="pincode" placeholder="Enter your pincode" pattern="[0-9]{6}" title="Please enter a valid 6-digit pincode" required>
             </div>
+            <div class="form-group">
+                <label for="delivery-mode">Delivery Mode</label>
+                <select id="delivery-mode" name="delivery-mode" required>
+                    <option value="Physical">Physical Copy - ₹149</option>
+                    <option value="Online">Online Copy - ₹99</option>
+                </select>
+            </div>
+            <div class="form-group" id="landmark-group">
+                <label for="landmark">Nearby Landmark</label>
+                <input type="text" id="landmark" name="landmark" placeholder="Enter a nearby landmark">
+            </div>
+            <div class="form-group" id="quantity-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" min="1" placeholder="Enter quantity">
+            </div>
             <!-- Hidden field for Manomitra -->
             <input type="hidden" name="source" value="Manomitra Magazine">
             <div class="form-group">
@@ -169,7 +184,7 @@
     </div>
 
     <div class="confirmation" id="confirmation">
-        <p>Enquiry Sent! The price of the magazine is ₹149. Please make payment using the QR code below.</p>
+        <p>Enquiry Sent! Please make a payment of <span id="final-price"></span> using the QR code below.</p> <!-- Dynamic Price Display -->
         <img src="assets/images/QR Innomitra.jpg" alt="QR Code for Payment">
         <p style="margin-top: 15px;">After payment, please send a screenshot to this number:</p>
         <a href="//api.whatsapp.com/send?phone=919522122133&text=Hello I Am Sharing A Screenshot For Payment Confirmation">
@@ -178,32 +193,70 @@
     </div>
 
     <script>
+        // Function to handle price display based on delivery mode
+        document.getElementById('delivery-mode').addEventListener('change', function(event) {
+            var value = event.target.value;
+            var landmarkGroup = document.getElementById('landmark-group');
+            var quantityGroup = document.getElementById('quantity-group');
+            var priceInfo = document.getElementById('price-info');
+
+            if (value === 'Physical') {
+                landmarkGroup.style.display = 'block';
+                quantityGroup.style.display = 'block';
+                priceInfo.textContent = 'Price: ₹149 (Physical Copy)';
+                document.getElementById('landmark').setAttribute('required', 'required');
+                document.getElementById('quantity').setAttribute('required', 'required');
+            } else {
+                landmarkGroup.style.display = 'none';
+                quantityGroup.style.display = 'none';
+                priceInfo.textContent = 'Price: ₹99 (Online Copy)';
+                document.getElementById('landmark').removeAttribute('required');
+                document.getElementById('quantity').removeAttribute('required');
+            }
+        });
+
+        // Function to handle form submission and display confirmation with price
         document.getElementById('magazineForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const form = event.target;
 
-            // Client-side validation
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
+            // Validate fields if Physical Copy is selected
+            const deliveryMode = document.getElementById('delivery-mode').value;
+            if (deliveryMode === 'Physical') {
+                const landmark = document.getElementById('landmark').value;
+                const quantity = document.getElementById('quantity').value;
+
+                if (!landmark) {
+                    alert('Please enter a nearby landmark.');
+                    return;
+                }
+
+                if (!quantity || quantity < 1) {
+                    alert('Please enter a valid quantity.');
+                    return;
+                }
             }
 
+            // Submit the form
             fetch(form.action, {
-                method: 'POST',
+                method: form.method,
                 body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
+                headers: {
+                    'Accept': 'application/json'
+                }
             }).then(response => {
                 if (response.ok) {
+                    const finalPrice = (deliveryMode === 'Physical') ? '₹149' : '₹99';
+                    document.getElementById('final-price').textContent = finalPrice;
                     document.getElementById('buy-form').style.display = 'none';
                     document.getElementById('confirmation').style.display = 'block';
                 } else {
-                    alert('There was a problem submitting your form');
+                    alert('There was a problem submitting your form.');
                 }
             }).catch(error => {
-                alert('There was a problem submitting your form');
+                alert('There was a problem submitting your form.');
             });
         });
     </script>
-
 </body>
 </html>
